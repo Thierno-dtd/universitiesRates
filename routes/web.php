@@ -2,6 +2,10 @@
 
 use App\Http\Controllers\ProfileController;
 use \App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
+use  App\Http\Controllers\RoleController;
+use  App\Http\Controllers\PermissionController;
+use  App\Http\Controllers\CommentModeratorController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -25,6 +29,15 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
+
+Route::resource('/users', UserController::class);
+
+Route::resource('/roles',RoleController::class);
+
+Route::resource('/permissions', PermissionController::class);
+
+Route::resource('/commentmoderators', CommentModeratorController::class);
+
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

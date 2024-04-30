@@ -4,6 +4,7 @@ import Dropdown from '@/Components/Dropdown';
 import NavLink from '@/Components/NavLink';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
 import { Link } from '@inertiajs/react';
+import SidebarLink from "@/Components/SidebarLink.jsx";
 
 export default function Authenticated({ user, header, children }) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
@@ -20,11 +21,10 @@ export default function Authenticated({ user, header, children }) {
                     </div>
 
 
-
                     <ul className="space-y-2 tracking-wide mt-8">
                         <li>
-                            <Link href="/dashboard" aria-label="dashboard"
-                               className="relative px-4 py-3 flex items-center space-x-4 rounded-xl text-white bg-gradient-to-r from-sky-600 to-cyan-400">
+                            <SidebarLink href="/dashboard" aria-label="dashboard"
+                                         active={false}>
                                 <svg className="-ml-1 h-6 w-6" viewBox="0 0 24 24" fill="none">
                                     <path
                                         d="M6 8a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V8ZM6 15a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-1Z"
@@ -35,65 +35,43 @@ export default function Authenticated({ user, header, children }) {
                                           className="fill-current group-hover:text-sky-300"></path>
                                 </svg>
                                 <span className="-mr-1 font-medium">Dashboard</span>
-                            </Link>
+                            </SidebarLink>
                         </li>
                         <li>
-                            <a href="#"
-                               className="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20"
-                                     fill="currentColor">
-                                    <path className="fill-current text-gray-300 group-hover:text-cyan-300"
-                                          fill-rule="evenodd"
-                                          d="M2 6a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1H8a3 3 0 00-3 3v1.5a1.5 1.5 0 01-3 0V6z"
-                                          clip-rule="evenodd"/>
-                                    <path className="fill-current text-gray-600 group-hover:text-cyan-600"
-                                          d="M6 12a2 2 0 012-2h8a2 2 0 012 2v2a2 2 0 01-2 2H2h2a2 2 0 002-2v-2z"/>
+                            <SidebarLink href={route('users.index')} aria-label="dashboard"
+                                         active={route().current('users.index')}>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                     stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                          d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"/>
                                 </svg>
-                                <span className="group-hover:text-gray-700">Categories</span>
-                            </a>
+
+                                <span className="-mr-1 font-medium">Users</span>
+                            </SidebarLink>
                         </li>
                         <li>
-                            <a href="#"
-                               className="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20"
-                                     fill="currentColor">
-                                    <path className="fill-current text-gray-600 group-hover:text-cyan-600"
-                                          fill-rule="evenodd"
-                                          d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z"
-                                          clip-rule="evenodd"/>
-                                    <path className="fill-current text-gray-300 group-hover:text-cyan-300"
-                                          d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z"/>
+                            <SidebarLink href={route('roles.index')} aria-label="dashboard"
+                                         active={route().current('roles.index')}>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                     stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                          d="M4.5 12a7.5 7.5 0 0 0 15 0m-15 0a7.5 7.5 0 1 1 15 0m-15 0H3m16.5 0H21m-1.5 0H12m-8.457 3.077 1.41-.513m14.095-5.13 1.41-.513M5.106 17.785l1.15-.964m11.49-9.642 1.149-.964M7.501 19.795l.75-1.3m7.5-12.99.75-1.3m-6.063 16.658.26-1.477m2.605-14.772.26-1.477m0 17.726-.26-1.477M10.698 4.614l-.26-1.477M16.5 19.794l-.75-1.299M7.5 4.205 12 12m6.894 5.785-1.149-.964M6.256 7.178l-1.15-.964m15.352 8.864-1.41-.513M4.954 9.435l-1.41-.514M12.002 12l-3.75 6.495"/>
                                 </svg>
-                                <span className="group-hover:text-gray-700">Reports</span>
-                            </a>
+
+                                <span className="-mr-1 font-medium">Roles</span>
+                            </SidebarLink>
                         </li>
                         <li>
-                            <a href="#"
-                               className="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20"
-                                     fill="currentColor">
-                                    <path className="fill-current text-gray-600 group-hover:text-cyan-600"
-                                          d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"/>
-                                    <path className="fill-current text-gray-300 group-hover:text-cyan-300"
-                                          d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"/>
+                            <SidebarLink href={route('commentmoderators.index')} aria-label="dashboard"
+                                         active={route().current('commentmoderators.index')}>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                     stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                          d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"/>
                                 </svg>
-                                <span className="group-hover:text-gray-700">Other data</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#"
-                               className="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20"
-                                     fill="currentColor">
-                                    <path className="fill-current text-gray-300 group-hover:text-cyan-300"
-                                          d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z"/>
-                                    <path className="fill-current text-gray-600 group-hover:text-cyan-600"
-                                          fill-rule="evenodd"
-                                          d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z"
-                                          clip-rule="evenodd"/>
-                                </svg>
-                                <span className="group-hover:text-gray-700">Finance</span>
-                            </a>
+
+                                <span className="-mr-1 font-medium">Comment</span>
+                            </SidebarLink>
                         </li>
                     </ul>
                 </div>
