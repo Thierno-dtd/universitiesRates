@@ -20,10 +20,10 @@ return new class extends Migration
             $table->integer('note');
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('university_id')->references('id')->on('universities')->onDelete('cascade');
-            $table->foreign('critere_id')->references('id')->on('criteres')->onDelete('cascade');
-            $table->foreign('filial_id')->references('id')->on('filials')->onDelete('cascade');
+            $table->foreignId('user_id')->constrained();
+            $table->foreignId('university_id')->constrained();
+            $table->foreignId('critere_id')->constrained();
+            $table->foreignId('filial_id')->constrained();
 
         });
     }

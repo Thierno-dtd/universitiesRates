@@ -8,6 +8,9 @@ import SidebarLink from "@/Components/SidebarLink.jsx";
 
 export default function Authenticated({ user, header, children }) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
+
+
+
     return (
         <div className="w-full h-full">
             <aside
@@ -34,7 +37,7 @@ export default function Authenticated({ user, header, children }) {
                                     <path d="M13 15a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-1Z"
                                           className="fill-current group-hover:text-sky-300"></path>
                                 </svg>
-                                <span className="-mr-1 font-medium">Dashboard</span>
+                                <span className="-mr-1 font-medium">Home</span>
                             </SidebarLink>
                         </li>
                         <li>
@@ -49,18 +52,7 @@ export default function Authenticated({ user, header, children }) {
                                 <span className="-mr-1 font-medium">Users</span>
                             </SidebarLink>
                         </li>
-                        <li>
-                            <SidebarLink href={route('roles.index')} aria-label="dashboard"
-                                         active={route().current('roles.index')}>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                     stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                          d="M4.5 12a7.5 7.5 0 0 0 15 0m-15 0a7.5 7.5 0 1 1 15 0m-15 0H3m16.5 0H21m-1.5 0H12m-8.457 3.077 1.41-.513m14.095-5.13 1.41-.513M5.106 17.785l1.15-.964m11.49-9.642 1.149-.964M7.501 19.795l.75-1.3m7.5-12.99.75-1.3m-6.063 16.658.26-1.477m2.605-14.772.26-1.477m0 17.726-.26-1.477M10.698 4.614l-.26-1.477M16.5 19.794l-.75-1.299M7.5 4.205 12 12m6.894 5.785-1.149-.964M6.256 7.178l-1.15-.964m15.352 8.864-1.41-.513M4.954 9.435l-1.41-.514M12.002 12l-3.75 6.495"/>
-                                </svg>
 
-                                <span className="-mr-1 font-medium">Roles</span>
-                            </SidebarLink>
-                        </li>
                         <li>
                             <SidebarLink href={route('commentmoderators.index')} aria-label="dashboard"
                                          active={route().current('commentmoderators.index')}>
@@ -71,6 +63,30 @@ export default function Authenticated({ user, header, children }) {
                                 </svg>
 
                                 <span className="-mr-1 font-medium">Comment</span>
+                            </SidebarLink>
+                        </li>
+                        <li>
+                            <SidebarLink href={route('universities.index')} aria-label="dashboard"
+                                         active={route().current('universities.index')}>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                     stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                          d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"/>
+                                </svg>
+
+                                <span className="-mr-1 font-medium">Universities</span>
+                            </SidebarLink>
+                        </li>
+                        <li>
+                            <SidebarLink href={route('criteres.index')} aria-label="dashboard"
+                                         active={route().current('criteres.index')}>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                     stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                          d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"/>
+                                </svg>
+
+                                <span className="-mr-1 font-medium">Critere d'evalaluation</span>
                             </SidebarLink>
                         </li>
                     </ul>
@@ -94,7 +110,7 @@ export default function Authenticated({ user, header, children }) {
             <div className="ml-auto mb-6 lg:w-[75%] xl:w-[80%] 2xl:w-[85%]">
                 <div className="sticky z-10 top-0 h-16 border-b bg-white lg:py-2.5">
                     <div className="px-6 flex items-center justify-between space-x-4 2xl:container">
-                        <h5 hidden className="text-2xl text-gray-600 font-medium lg:block">Dashboard</h5>
+                    <h5 hidden className="text-2xl text-gray-600 font-medium lg:block">Dashboard</h5>
                         <button className="w-12 h-16 -mr-2 border-r lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 my-auto" fill="none"
                                  viewBox="0 0 24 24" stroke="currentColor">

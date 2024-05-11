@@ -21,7 +21,7 @@ return new class extends Migration
             $table->float('avarageRating');
             $table->timestamps();
 
-            $table->foreign('university_id')->references('id')->on('universities')->onDelete('cascade');
+            $table->foreignId('university_id')->constrained();
         });
     }
 

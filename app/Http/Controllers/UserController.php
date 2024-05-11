@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -13,7 +14,9 @@ class UserController extends Controller
      */
     public function index(): Response
     {
-        return Inertia::render('admin/Users/UserIndex');
+        $users = User::all();
+        return Inertia::render('admin/Users/UserIndex', ['users' => $users]);
+        //return view('User');
     }
 
     /**

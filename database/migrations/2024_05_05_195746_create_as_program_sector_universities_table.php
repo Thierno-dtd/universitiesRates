@@ -19,10 +19,10 @@ return new class extends Migration
             $table->unsignedBigInteger('filial_id')->nullable();
             $table->timestamps();
 
-            $table->foreign('program_id')->references('id')->on('programs')->onDelete('cascade');
-            $table->foreign('university_id')->references('id')->on('universities')->onDelete('cascade');
-            $table->foreign('sector_id')->references('id')->on('sectors')->onDelete('cascade');
-            $table->foreign('filial_id')->references('id')->on('filials')->onDelete('cascade');
+            $table->foreignId('program_id')->constrained();
+            $table->foreignId('university_id')->constrained();
+            $table->foreignId('sector_id')->constrained();
+            $table->foreignId('filial_id')->constrained();
 
         });
     }

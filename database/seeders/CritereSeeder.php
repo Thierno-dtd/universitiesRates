@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Critere;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -12,6 +13,6 @@ class CritereSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        Critere::factory(5)->create();
     }
 }
